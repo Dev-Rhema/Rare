@@ -4,10 +4,10 @@ import { cn } from "../../utils/cn";
 
 const linkClass = ({ isActive }) =>
   cn(
-    "border-b-2 py-1 text-sm font-medium transition-colors",
+    "rounded-full px-4 py-2 text-sm font-medium transition-colors",
     isActive
-      ? "border-black text-black"
-      : "border-transparent text-black hover:text-black",
+      ? "bg-brand-blue text-white hover:bg-brand-blue-dark"
+      : "bg-white text-black hover:bg-brand-yellow-light",
   );
 
 export default function NavLinks({ className }) {
