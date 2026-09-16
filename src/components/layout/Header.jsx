@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
-import { CloseIcon, MenuIcon } from "../ui/Icons";
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "../ui/Icons";
 import NavLinks from "./NavLinks";
 
-export default function Header() {
+export default function Header({ darkMode, onThemeToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname, search } = useLocation();
 
@@ -28,10 +28,21 @@ export default function Header() {
           </Link>
           <Link
             to="/products"
-            className="rounded-full bg-brand-yellow px-4 py-2 font-semibold text-ink hover:bg-brand-yellow-light"
+            className="rounded-full bg-brand-yellow px-4 py-2 font-semibold text-on-yellow hover:bg-brand-yellow-light"
           >
             Cart (0)
           </Link>
+          <button
+            type="button"
+            className="rounded-lg p-2 text-ink hover:bg-surface"
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
+            title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={onThemeToggle}
+          >
+            {darkMode ? <SunIcon /> : <MoonIcon />}
+          </button>
           <button
             type="button"
             className="rounded-lg p-1 md:hidden"

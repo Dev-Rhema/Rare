@@ -1,16 +1,29 @@
-import { SORT_OPTIONS } from '../../data/catalog';
-import Button from '../ui/Button';
-import { CloseIcon, SlidersIcon } from '../ui/Icons';
+import { SORT_OPTIONS } from "../../data/catalog";
+import Button from "../ui/Button";
+import { CloseIcon, SlidersIcon } from "../ui/Icons";
 
-export default function ResultsToolbar({ count, sort, onSortChange, onOpenFilters, activeFilters, onClearAll }) {
+export default function ResultsToolbar({
+  count,
+  sort,
+  onSortChange,
+  onOpenFilters,
+  activeFilters,
+  onClearAll,
+}) {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">
-          <span className="font-semibold text-ink">{count}</span> {count === 1 ? 'result' : 'results'}
+          <span className="font-semibold text-ink">{count}</span>{" "}
+          {count === 1 ? "result" : "results"}
         </p>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="lg:hidden" onClick={onOpenFilters}>
+          <Button
+            variant="outline"
+            size="sm"
+            className="lg:hidden"
+            onClick={onOpenFilters}
+          >
             <SlidersIcon className="h-4 w-4" />
             Filters{activeFilters.length > 0 && ` (${activeFilters.length})`}
           </Button>
@@ -21,7 +34,11 @@ export default function ResultsToolbar({ count, sort, onSortChange, onOpenFilter
               onChange={(event) => onSortChange(event.target.value)}
               className="rounded-xl border border-line bg-white px-3 py-2 text-sm font-medium outline-none focus:border-brand-blue"
             >
-              {SORT_OPTIONS.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+              {SORT_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </label>
         </div>
@@ -35,13 +52,17 @@ export default function ResultsToolbar({ count, sort, onSortChange, onOpenFilter
               type="button"
               onClick={filter.onRemove}
               aria-label={`Remove filter ${filter.label}`}
-              className="inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-3 py-1.5 text-xs font-semibold hover:bg-brand-yellow-light"
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-3 py-1.5 text-xs font-semibold text-on-yellow hover:bg-brand-yellow-light"
             >
               {filter.label}
               <CloseIcon className="h-3.5 w-3.5" />
             </button>
           ))}
-          <button type="button" onClick={onClearAll} className="px-2 text-xs font-semibold text-brand-blue hover:underline">
+          <button
+            type="button"
+            onClick={onClearAll}
+            className="px-2 text-xs font-semibold text-brand-blue hover:underline"
+          >
             Clear all
           </button>
         </div>

@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { CONTACT_FIELDS } from '../../data/site';
-import { validateFields } from '../../utils/validation';
-import Button from '../ui/Button';
-import Card from '../ui/Card';
-import FormField from '../ui/FormField';
-import { CheckIcon } from '../ui/Icons';
+import { useState } from "react";
+import { CONTACT_FIELDS } from "../../data/site";
+import { validateFields } from "../../utils/validation";
+import Button from "../ui/Button";
+import Card from "../ui/Card";
+import FormField from "../ui/FormField";
+import { CheckIcon } from "../ui/Icons";
 
-const EMPTY_VALUES = Object.fromEntries(CONTACT_FIELDS.map((field) => [field.name, '']));
+const EMPTY_VALUES = Object.fromEntries(
+  CONTACT_FIELDS.map((field) => [field.name, ""]),
+);
 
 export default function ContactForm() {
   const [values, setValues] = useState(EMPTY_VALUES);
@@ -15,7 +17,8 @@ export default function ContactForm() {
 
   const handleChange = ({ target: { name, value } }) => {
     setValues((current) => ({ ...current, [name]: value }));
-    if (errors[name]) setErrors((current) => ({ ...current, [name]: undefined }));
+    if (errors[name])
+      setErrors((current) => ({ ...current, [name]: undefined }));
   };
 
   const handleSubmit = (event) => {
@@ -33,12 +36,17 @@ export default function ContactForm() {
   if (sent) {
     return (
       <Card className="flex flex-col items-start p-8 md:p-10" role="status">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-yellow"><CheckIcon /></span>
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-yellow text-on-yellow">
+          <CheckIcon />
+        </span>
         <h2 className="mt-5 text-2xl font-extrabold">Message sent</h2>
         <p className="mt-2 max-w-md text-muted">
-          Thanks, {values.name.split(' ')[0]}. We will reply to {values.email} within one working day.
+          Thanks, {values.name.split(" ")[0]}. We will reply to {values.email}{" "}
+          within one working day.
         </p>
-        <Button variant="outline" className="mt-6" onClick={reset}>Send another message</Button>
+        <Button variant="outline" className="mt-6" onClick={reset}>
+          Send another message
+        </Button>
       </Card>
     );
   }
@@ -49,10 +57,18 @@ export default function ContactForm() {
       <p className="mt-1 text-sm text-muted">Fields marked * are required.</p>
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         {CONTACT_FIELDS.map((field) => (
-          <FormField key={field.name} {...field} value={values[field.name]} error={errors[field.name]} onChange={handleChange} />
+          <FormField
+            key={field.name}
+            {...field}
+            value={values[field.name]}
+            error={errors[field.name]}
+            onChange={handleChange}
+          />
         ))}
       </div>
-      <Button type="submit" size="lg" className="mt-8 w-full sm:w-auto">Send message</Button>
+      <Button type="submit" size="lg" className="mt-8 w-full sm:w-auto">
+        Send message
+      </Button>
     </Card>
   );
 }
