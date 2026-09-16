@@ -5,20 +5,10 @@
 @layer base {
   :root {
     --color-page: #ffffff;
-    --color-panel: #ffffff;
     --color-ink: #000000;
     --color-muted: #5f6470;
     --color-surface: #f0f1f4;
     --color-line: #e3e5ea;
-  }
-
-  html.dark {
-    --color-page: #111318;
-    --color-panel: #1b1e25;
-    --color-ink: #f5f6f8;
-    --color-muted: #aeb4c0;
-    --color-surface: #252a33;
-    --color-line: #3a414d;
   }
 
   html {
@@ -27,15 +17,6 @@
   body {
     @apply font-sans text-ink;
     background-color: var(--color-page);
-  }
-  .dark .bg-white {
-    background-color: var(--color-panel);
-  }
-  .dark .bg-white\/95 {
-    background-color: rgb(27 30 37 / 95%);
-  }
-  .dark .border-black\/5 {
-    border-color: rgb(255 255 255 / 10%);
   }
   :focus-visible {
     @apply outline-none ring-2 ring-brand-blue ring-offset-2;

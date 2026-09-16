@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "../ui/Icons";
+import { CloseIcon, MenuIcon } from "../ui/Icons";
 import NavLinks from "./NavLinks";
 
-export default function Header({ darkMode, onThemeToggle }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname, search } = useLocation();
 
   useEffect(() => setMenuOpen(false), [pathname, search]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-black/15 bg-brand-yellow backdrop-blur">
       <Container className="flex h-20 items-center justify-between gap-6">
         <div className="flex items-center gap-12">
           <Logo className="h-10 md:h-11" />
@@ -22,30 +22,19 @@ export default function Header({ darkMode, onThemeToggle }) {
         <div className="flex items-center gap-6 text-sm">
           <Link
             to="/contact"
-            className="hidden text-muted hover:text-ink sm:block"
+            className="hidden text-black hover:text-black sm:block"
           >
             Account
           </Link>
           <Link
             to="/products"
-            className="rounded-full bg-brand-yellow px-4 py-2 font-semibold text-on-yellow hover:bg-brand-yellow-light"
+            className="rounded-full bg-brand-blue px-4 py-2 font-semibold text-white hover:bg-brand-blue-dark"
           >
             Cart (0)
           </Link>
           <button
             type="button"
-            className="rounded-lg p-2 text-ink hover:bg-surface"
-            aria-label={
-              darkMode ? "Switch to light mode" : "Switch to dark mode"
-            }
-            title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            onClick={onThemeToggle}
-          >
-            {darkMode ? <SunIcon /> : <MoonIcon />}
-          </button>
-          <button
-            type="button"
-            className="rounded-lg p-1 md:hidden"
+            className="rounded-lg p-1 text-black hover:bg-brand-yellow-light md:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
