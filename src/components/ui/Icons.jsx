@@ -20,6 +20,19 @@ export const SearchIcon = (p) => (
     <path d="m20 20-3.5-3.5" />
   </Icon>
 );
+export const UserIcon = (p) => (
+  <Icon {...p}>
+    <circle cx="12" cy="8" r="3.5" />
+    <path d="M5 20a7 7 0 0 1 14 0" />
+  </Icon>
+);
+export const CartIcon = (p) => (
+  <Icon {...p}>
+    <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L20.5 8H6" />
+    <circle cx="10" cy="20" r="1" />
+    <circle cx="17" cy="20" r="1" />
+  </Icon>
+);
 export const MenuIcon = (p) => (
   <Icon {...p}>
     <path d="M4 7h16M4 12h16M4 17h16" />

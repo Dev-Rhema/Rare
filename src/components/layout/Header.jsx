@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
-import { CloseIcon, MenuIcon } from "../ui/Icons";
+import { CartIcon, CloseIcon, MenuIcon, UserIcon } from "../ui/Icons";
 import NavLinks from "./NavLinks";
 
 export default function Header() {
@@ -14,23 +14,27 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/15 bg-brand-yellow backdrop-blur">
       <Container className="flex h-20 items-center justify-between gap-6">
-        <div className="flex items-center gap-12">
+        <div className="flex items-center gap-6">
           <Logo className="h-10 md:h-11" />
-          <NavLinks className="hidden items-center gap-8 md:flex" />
         </div>
+        <NavLinks className="hidden items-center gap-2 md:flex text-center" />
 
-        <div className="flex items-center gap-6 text-sm">
+        <div className="flex items-center gap-4 text-base">
           <Link
             to="/contact"
-            className="hidden text-black hover:text-black sm:block"
+            className="rounded-lg p-2 text-black hover:bg-brand-yellow-light"
+            aria-label="Account"
+            title="Account"
           >
-            Account
+            <UserIcon />
           </Link>
           <Link
             to="/products"
-            className="rounded-full bg-brand-blue px-4 py-2 font-semibold text-white hover:bg-brand-blue-dark"
+            className="rounded-lg bg-brand-blue p-2 text-white hover:bg-brand-blue-dark"
+            aria-label="Cart"
+            title="Cart"
           >
-            Cart (0)
+            <CartIcon />
           </Link>
           <button
             type="button"

@@ -24,6 +24,17 @@
     @apply font-sans text-ink;
     background-color: var(--color-page);
   }
+  html,
+  body,
+  body * {
+    cursor: url("/pikaCursorrr.png") 7 1, auto !important;
+    cursor: image-set(
+        url("/pikaCursorrr.png") 1x,
+        url("/pikaCursorrr@2x.png") 2x
+      )
+      7 1,
+      auto !important;
+  }
   h1,
   h2,
   h3,

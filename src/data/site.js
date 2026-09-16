@@ -4,6 +4,9 @@ export const ANNOUNCEMENT =
 export const NAV_LINKS = [
   { label: "Home", to: "/", end: true },
   { label: "All products", to: "/products" },
+  { label: "Pokémon", to: "/pokemon" },
+  { label: "Magic: The Gathering", to: "/magic" },
+  { label: "Riftbound", to: "/riftbound" },
   { label: "Contact", to: "/contact" },
 ];
 

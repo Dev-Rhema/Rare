@@ -14,9 +14,9 @@ export default function Hero() {
     navigate(query ? `/products?q=${encodeURIComponent(query)}` : "/products");
 
   return (
-    <Section>
-      <div className="grid items-center gap-16 lg:grid-cols-[1.5fr_1fr]">
-        <div>
+    <Section className="overflow-hidden">
+      <div className="grid min-w-0 items-center gap-16 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+        <div className="min-w-0">
           <h1 className="text-5xl font-black leading-[0.92] tracking-tighter text-brand-blue sm:text-7xl lg:text-8xl">
             {HERO.title.map((line) => (
               <span key={line} className="block">
@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
 
         {/* The shop's own card, tilted on a slab of logo yellow */}
-        <div className="relative mx-auto w-full max-w-sm">
+        <div className="relative mx-auto w-full min-w-0 max-w-[17rem] sm:max-w-sm">
           <div
             aria-hidden="true"
             className="absolute -inset-3 rotate-[4deg] rounded-3xl bg-brand-yellow sm:-inset-5"

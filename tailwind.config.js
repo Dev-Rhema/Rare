@@ -18,6 +18,7 @@ export default {
         line: "var(--color-line)",
       },
       fontFamily: {
+        heading: ['"Upheaval"', "sans-serif"],
         sans: [
           '"Archivo"',
           "system-ui",
