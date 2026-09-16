@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Upheaval";
+  src: url("./fonts/upheaval/upheavtt.ttf") format("truetype");
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --color-page: #ffffff;
@@ -17,6 +23,16 @@
   body {
     @apply font-sans text-ink;
     background-color: var(--color-page);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Upheaval", sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.06em !important;
   }
   :focus-visible {
     @apply outline-none ring-2 ring-brand-blue ring-offset-2;

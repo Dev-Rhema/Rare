@@ -16,7 +16,7 @@ export default function Hero() {
     <Section>
       <div className="grid items-center gap-16 lg:grid-cols-[1.5fr_1fr]">
         <div>
-          <h1 className="text-5xl font-black leading-[0.92] tracking-tighter sm:text-7xl lg:text-8xl">
+          <h1 className="text-5xl font-black leading-[0.92] tracking-tighter text-brand-blue sm:text-7xl lg:text-8xl">
             {HERO.title.map((line) => <span key={line} className="block">{line}</span>)}
           </h1>
           <p className="mt-6 max-w-md text-lg text-muted">{HERO.description}</p>
