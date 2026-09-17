@@ -39,15 +39,17 @@ export default function Hero() {
         </div>
 
         {/* The shop's own card, tilted on a slab of logo yellow */}
-        {featured && (
-          <div className="relative mx-auto w-full min-w-0 max-w-[17rem] sm:max-w-sm">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-3 rotate-[4deg] rounded-3xl bg-brand-yellow sm:-inset-5"
-            />
+        <div className="relative mx-auto w-full min-w-0 max-w-[17rem] sm:max-w-sm">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-3 rotate-[4deg] rounded-3xl bg-brand-yellow sm:-inset-5"
+          />
+          {featured ? (
             <FeaturedCard product={featured} className="relative" />
-          </div>
-        )}
+          ) : (
+            <div className="relative aspect-[5/7] rounded-2xl bg-brand-blue shadow-2xl shadow-brand-blue/20" />
+          )}
+        </div>
       </div>
     </Section>
   );
