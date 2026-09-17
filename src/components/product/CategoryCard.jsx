@@ -8,7 +8,6 @@ export default function CategoryCard({ category }) {
       <ImagePlaceholder aspect="aspect-square" label={`${category.label} category`} className="transition-colors group-hover:bg-brand-yellow/40" />
       <div className="px-1 pb-1 pt-3">
         <h3 className="font-bold">{category.label}</h3>
-        <p className="text-sm text-muted">{category.total} {category.unit}</p>
       </div>
     </Card>
   );
