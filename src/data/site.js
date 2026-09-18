@@ -39,7 +39,7 @@ export const ABOUT_PARAGRAPHS = [
 ];
 
 export const FOOTER_BLURB =
-  "A card shop that photographs and grades every single before it goes on sale.";
+  "Where Rarity Finds A Home. For Those Who Collect The Rare!";
 
 export const FOOTER_COLUMNS = [
   {
@@ -66,9 +66,6 @@ export const FOOTER_COLUMNS = [
     title: "Company",
     links: [
       { label: "Contact", to: "/contact" },
-      { label: "Sell to us", to: "/contact" },
-      { label: "Consign a collection", to: "/contact" },
-      { label: "Grading submissions", to: "/contact" },
       { label: "Instagram", to: "/contact" },
     ],
   },
@@ -78,26 +75,16 @@ export const CONTACT_CHANNELS = [
   {
     icon: "mail",
     title: "Email",
-    lines: ["hello@raretcg.shop", "We reply within one working day."],
-    action: { label: "Write an email", href: "mailto:hello@raretcg.shop" },
-  },
-  {
-    icon: "clock",
-    title: "Shop hours",
-    lines: ["Monday to Friday, 9am to 6pm", "Saturday, 10am to 4pm"],
-  },
-  {
-    icon: "pin",
-    title: "Collection point",
-    lines: ["Unit 4, Harbour Yard", "Pickup by appointment only"],
+    lines: ["decolabs@decolabs.io", "We reply within one working day."],
+    action: { label: "Write an email", href: "mailto:decolabs@decolabs.io" },
   },
 ];
 
 export const SELL_CTA = {
   title: "Selling a collection?",
   description:
-    "Send a few photos and a rough list. We make cash and store credit offers on binders, bulk and slabs.",
-  label: 'Choose "Selling or consigning" in the form',
+    "Send a few photos and a rough list. We make cash offers on binders, bulk and slabs.",
+  label: 'Choose "Selling" in the form',
 };
 
 export const CONTACT_FIELDS = [
@@ -129,7 +116,7 @@ export const CONTACT_FIELDS = [
       "Order and shipping",
       "Card condition",
       "Preorders",
-      "Selling or consigning",
+      "Selling",
       "Something else",
     ],
   },
@@ -157,7 +144,7 @@ export const FAQS = [
   {
     question: "Can I return a card?",
     answer:
-      "Yes, within 14 days if it arrives in a different condition than listed. Send it back in the same sleeve and top-loader.",
+      "No, we do not accept returns and all sales are final, unless we've made a mistake on grading.",
   },
   {
     question: "When am I charged for a preorder?",
@@ -167,7 +154,7 @@ export const FAQS = [
   {
     question: "Do you buy cards?",
     answer:
-      'We buy singles, sealed product and slabs. Pick "Selling or consigning" in the form and attach a list or photos.',
+      'We buy singles, sealed product and slabs. Pick "Selling" in the form and attach a list or photos.',
   },
   {
     question: "Is RARE affiliated with The Pokémon Company?",
