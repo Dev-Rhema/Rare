@@ -79,3 +79,14 @@ export const MapPinIcon = (p) => (
     <circle cx="12" cy="9" r="2.5" />
   </Icon>
 );
+export const ArrowRightIcon = (p) => (
+  <Icon {...p}>
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </Icon>
+);
+export const BoxIcon = (p) => (
+  <Icon {...p}>
+    <path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8Z" />
+    <path d="M3 4h18v4H3zM10 12h4" />
+  </Icon>
+);
