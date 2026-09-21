@@ -28,10 +28,10 @@
   body,
   body * {
     cursor:
-      url("/pikaCursorrr.png") 6 1,
+      url("/pikaCursorrr.png") 4 0,
       auto !important;
     cursor:
-      image-set(url("/pikaCursorrr.png") 1x, url("/pikaCursorrr@2x.png") 2x) 6 1,
+      image-set(url("/pikaCursorrr.png") 1x, url("/pikaCursorrr@2x.png") 2x) 4 0,
       auto !important;
   }
   h1,
@@ -53,5 +53,61 @@
     *::after {
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+.leaf {
+  position: absolute;
+  top: -10%;
+  display: block;
+  animation-name: leaf-fall, leaf-sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+.leaf img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.leaf-spin {
+  animation-name: leaf-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes leaf-fall {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 110%;
+  }
+}
+
+@keyframes leaf-sway {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(22px);
+  }
+}
+
+@keyframes leaf-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf,
+  .leaf-spin {
+    animation: none;
   }
 }
